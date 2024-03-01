@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "6e8df39e-dfd0-4e48-b059-7a63c33860c3",
+		"name": "pet store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get pet find status",
+			"id": "48580367-cf0b-49b6-9c70-08a33a95af46",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/pet/findByStatus?status=sold",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"findByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "sold"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get pet by id",
+			"id": "4e34c701-3ce4-4f8d-b15e-887601d0eb15",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://petstore.swagger.io/v2/pet/148148"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "ac7b604a-f0bd-4f4f-b62b-d63b437da6bf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 148148,\r\n  \"category\": {\r\n    \"id\": 148148,\r\n    \"name\": \"doggie\"\r\n  },\r\n  \"name\": \"marron five\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 148148,\r\n      \"name\": \"ovcharka\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/pet"
+			},
+			"response": []
+		},
+		{
+			"name": "Upload image",
+			"id": "897b87d7-9c03-4c8d-afd5-cfafb5f3bff0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "additionalMetadata",
+							"value": "image jpg",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"fileNotInWorkingDirectoryWarning": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+							"filesNotInWorkingDirectory": [
+								"/C:/Users/appli/OneDrive/Рабочий стол/Моя папка/photo_2024-02-13_03-09-02.jpg"
+							],
+							"src": "postman-cloud:///1eecc117-ad58-4cf0-bc12-d13f69755b7d"
+						}
+					]
+				},
+				"url": "https://petstore.swagger.io/v2/pet/148148/uploadImage"
+			},
+			"response": []
+		},
+		{
+			"name": "Update pet",
+			"id": "b0275746-8774-46d9-ac49-2a19c2f31b50",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 148148,\r\n  \"category\": {\r\n    \"id\": 148148,\r\n    \"name\": \"doggie\"\r\n  },\r\n  \"name\": \"GAV-GAV\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 148148,\r\n      \"name\": \"ovcharka\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/pet"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "10d927b7-22b2-465b-9123-b022c1572344",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "api_key",
+						"value": "special-key",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "https://petstore.swagger.io/v2/pet/148148"
+			},
+			"response": []
+		}
+	]
+}
